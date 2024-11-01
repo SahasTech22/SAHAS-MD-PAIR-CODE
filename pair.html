@@ -145,11 +145,11 @@
         <div id="text">
           <i class="fa fa-user"></i>
           <p>
-            <h3 class="centered-text">Link with phone number</h3>
+            <h3 class="centered-text">𝖫𝗂𝗇𝗄 𝖶𝗂𝗍𝗁 𝖯𝗁𝗈𝗇𝖾 𝖭𝗎𝗆𝖻𝖾𝗋</h3>
             <br>
-            <h6>🔢 Enter your number with country code.</h6>
+            <h6>🔢 𝖤𝗇𝗍𝖾𝗋 𝖸𝗈𝗎𝗋 𝖭𝗎𝗆𝖻𝖾𝗋 𝖶𝗂𝗍𝗁 𝖢𝗈𝗎𝗇𝗍𝗋𝗒 𝖢𝗈𝖽𝖾.</h6>
             <div class="input-container">
-              <input placeholder="+94729xxxxxx" type="number" id="number" placeholder="❗ Enter your phone number with country code" name="">
+              <input placeholder="+94718xxxxxx" type="number" id="number" placeholder="❗ 𝖤𝗇𝗍𝖾𝗋 𝖸𝗈𝗎𝗋 𝖯𝗁𝗈𝗇𝖾 𝖭𝗎𝗆𝖻𝖾𝗋 𝖶𝗂𝗍𝗁 𝖢𝗈𝗎𝗇𝗍𝗋𝗒 𝖢𝗈𝖽𝖾" name="">
               <button id="submit">Submit</button>
             </div>
             <!-- Add the loading spinner -->
@@ -178,7 +178,7 @@
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "✔️ COPIED";
+      obj.innerText = "✔️ 𝖢𝖮𝖯𝖨𝖤𝖣";
       obj.style = "color:red;font-weight:bold";
       obj.size = "5";
       setTimeout(() => {
@@ -191,9 +191,9 @@
     b.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!c.value) {
-        a.innerHTML = '<a style="color:black;font-weight:bold">❗Enter your whatsapp number with country code.</a><br><br>';
+        a.innerHTML = '<a style="color:black;font-weight:bold">❗ 𝖤𝗇𝗍𝖾𝗋 𝖸𝗈𝗎𝗋 𝖶𝗁𝖺𝗍𝗌𝖺𝗉𝗉 𝖭𝗎𝗆𝖻𝖾𝗋 𝖶𝗂𝗍𝗁 𝖼𝗈𝗎𝗇𝗍𝗋𝗒 𝖢𝗈𝖽𝖾.</a><br><br>';
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-        a.innerHTML = '<a style="color:black;font-weight:bold">❗Invalid number format. Please try again.</a><br><br>';
+        a.innerHTML = '<a style="color:black;font-weight:bold">❗ 𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖭𝗎𝗆𝖻𝖾𝗋 𝖥𝗈𝗋𝗆𝖺𝗍. 𝖯𝗅𝖾𝖺𝗌𝖾 𝖳𝗋𝗒 𝖠𝗀𝖺𝗂𝗇.</a><br><br>';
       } else {
         const bc = c.value.replace(/[^0-9]/g, "");
         let bb = "";
@@ -216,7 +216,7 @@
         document.getElementById("loading-spinner").style.display = "block";
         a.innerHTML = ''; // Clear the previous content
         let { data } = await axios(`/code?number=${bc}`);
-        let code = data.code || "❗ Service Unavailable";
+        let code = data.code || "❗ 𝖲𝖾𝗋𝗏𝗂𝖼𝖾 𝖴𝗇𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾";
         a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
         // Hide the loading spinner when the process is complete
         document.getElementById("loading-spinner").style.display = "none";
